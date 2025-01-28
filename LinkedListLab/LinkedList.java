@@ -249,8 +249,10 @@ public class LinkedList {
             curr = curr.next;
         }
 
+        Node temp = curr.next;
+        curr.next = null;
         //And return last item
-        return curr.next;
+        return temp;
     }
 
 
