@@ -142,7 +142,7 @@ public class LinkedList {
     /**
      * Removes the first node of the list
      */
-    public Object pop()
+    public Node pop()
     {
 
         //Simple is_empty check
@@ -399,6 +399,23 @@ public class LinkedList {
         //Replace data of Node at position with new data    
         prev.data = newData;
         
+    }
+
+
+    public void reverse()
+    {
+        Node current = start;
+        Node prev = null;
+        Node next = null;
+
+        while(current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        start = prev;
     }
 
     

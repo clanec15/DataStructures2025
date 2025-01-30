@@ -1,42 +1,45 @@
-import java.util.Random;
+//import java.util.Random;
+import java.util.Scanner;
 
 public class mainProg {
+
+    public static Node insertNodeAtHead(Node head, int data)
+    {
+        Node to_add = new Node(data);
+        
+        to_add.next=head;
+        
+        return to_add;
+
+        
+    }
+
     public static void main(String[] args) {
 
-        Random rand = new Random(System.currentTimeMillis()/1000L);
-        LinkedList list = new LinkedList();
+        
 
-        for(int i = 0; i < 10; i++)
+        //Random rand = new Random(System.currentTimeMillis()/1000L);
+        Scanner read = new Scanner(System.in);
+        LinkedList llist = new LinkedList();
+        
+        int items = read.nextInt();
+        
+        for(int i = 0; i < items; i++)
         {
-            list.append(new Node(rand.nextInt(100)));
+            int data = read.nextInt();
+            llist.start = insertNodeAtHead(llist.start, data);
         }
-
-        Node curr = list.start;
-        int iterable = 1;
-        int big = 0;
-        int itBig = 0;
-
-        list.show();
+        
+        llist.show();
 
 
-        System.out.println("\n\n\n\n");
 
-        while(curr.next != null)
-        {
-            if((int)curr.data > big)
-            {
-                big = (int)curr.data;
-                itBig = iterable;
-            }
 
-            curr = curr.next;
-            iterable++;
-        }
+        read.close();
 
-        list.append(new Node(big));
-        list.remove(itBig);
 
-        list.show();
+
+        
 
     }
 }
