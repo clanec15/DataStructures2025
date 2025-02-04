@@ -2,7 +2,6 @@
 import java.util.Scanner;
 
 public class mainProg {
-
     public static void main(String[] args) {
 
         
