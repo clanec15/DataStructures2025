@@ -418,5 +418,30 @@ public class LinkedList {
         start = prev;
     }
 
+
+    public void removeDups()
+    {
+        //Selects head of list as starting point
+        Node curr = this.start;
+
+        //Iterates until EOL (End Of List)
+        do
+        {
+            
+            Node curr2 = curr;
+
+            while(curr2.next != null){
+                if(curr2.next.data == curr.data){
+                    curr2.next = curr2.next.next;
+                } else {
+                    curr2 = curr2.next;
+                }
+            }
+
+            curr = curr.next;
+
+        }while(curr != null);
+    }
+
     
 }
